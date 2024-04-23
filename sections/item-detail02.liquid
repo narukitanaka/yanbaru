@@ -1,0 +1,141 @@
+<div class="p_under p_item-detail bottom-section">
+  <div class="to-about img-box obj-fit">
+    <picture>
+      <source srcset="images/item-detail-img01_sp.jpg" media="(max-width: 769px)">
+      <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/item-detail-img01.jpg" alt="">
+    </picture>
+    <div class="btn-area"><a class="btn" href="/pages/about/">やんばるジェラートについて</a></div>
+  </div><!-- /.to-about -->
+
+  {% assign recommend_item = product.metafields.custom._recommend %}
+  {%-  if recommend_item != blank -%}
+
+    <div class="recomend-area">
+      <div class="recomend_ttl-wrapper"><h2>こちらもおすすめ</h2></div>
+        <div class="recomend_item-list flex">
+
+          {%- for product in recommend_item.value  -%}
+            <div class="item-card h-scale">
+              <div class="img-box obj-fit"><img src="{{ product.featured_image.src | img_url: 'master' }}" alt=""></div>
+              <div class="under-box b-rudius">
+                <p class="name">{{ product.title }}</p>
+                <p class="cate">
+                  {% for collection in product.collections %}
+                    {% assign excluded_collections = 'all' | split: ',' %}
+                    {% unless excluded_collections contains collection.handle %}
+                      {{ collection.title }}
+                    {% endunless %}
+                  {% endfor %}
+                </p>
+                {% comment %} <p class="price">{{ product.price | money }}</p> {% endcomment %}
+                {% if product.variants.size > 2 %}
+                  <p class="price">{{ product.price | money }}〜</p>
+                {% else %}
+                  <p class="price">{{ product.price | money }}</p>
+                {% endif %}
+                <div class="to-detail b-rudius"><a href="{{ product.url }}">商品の詳細を見る</a></div>
+                {% if product.variants.size > 2 %}
+                  <p class="add-option" style="color: #f00; font-size: 1.4rem; line-height: 1.4; height: 4.4rem; margin-bottom: 1rem;">詳細ページから商品オプションを選択してください</p>
+                {% else %}
+                  <div class="add-cart">
+                    <form action="/cart/add" method="post">
+                      <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                      <input type="hidden" name="quantity" value="1">
+                      <button class="b-rudius" type="submit">カートに入れる</button>
+                    </form>
+                  </div><!-- /.add-cart -->
+                {% endif %}
+              </div><!-- /.under-box -->
+              <div class="preview"><a href="#modal{{ forloop.index }}" data="{{ product.handle }}"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/icon-preview.svg" alt=""></a></div>
+            </div><!-- /.item-card -->
+
+            <div class="remodal" data-remodal-id="modal{{ forloop.index }}">
+              <button data-remodal-action="close" class="remodal-close"></button>
+              <div class="modal-inner">
+                <div class="item-content">
+                  <div class="img-content">
+                    <div class="img-wrapper">
+                      <div class="swiper-preview" id="swiper-{{ forloop.index }}">
+                        <div class="swiper-wrapper">
+                          {% for image in product.images %}
+                            <div class="swiper-slide">
+                              <div class="img-wrap">
+                                <img src="{{ image.src | img_url: 'master' }}" alt="">
+                              </div>
+                            </div>
+                          {%- endfor -%}
+                        </div><!-- /.swiper-wrapper -->
+                      </div><!-- /.swiper03 -->
+                      <div class="thumb-list">
+                        {% for image in product.images %}
+                          <div class="thumb-item">
+                            <a class="thumb-link" href="javascript:void(0);" onclick="previewthumbnail({{ forloop.index }}, {{ forloop.parentloop.index }})">
+                              <img src="{{ image.src | img_url: 'master' }}" alt="">
+                            </a>
+                          </div>
+                        {%- endfor -%}
+                      </div><!-- /.thumb-list -->
+                    </div><!-- /.img-wrapper -->
+                  </div><!-- /.img-conten -->
+                  <div class="detail-content">
+                    <p class="name">{{ product.title }}</p>
+                    <p class="cate">
+                      {% for collection in product.collections %}
+                        {{ collection.title }}
+                      {% endfor %}
+                    </p>
+                    {% comment %} <p class="price">{{ product.price | money }}</p> {% endcomment %}
+                    {% if product.variants.size > 2 %}
+                      <p class="price">{{ product.price | money }}〜</p>
+                    {% else %}
+                      <p class="price">{{ product.price | money }}</p>
+                    {% endif %}
+                    <a class="btn-item" href="{{ product.url }}">商品の詳細を見る</a>
+                    <p class="block_tex">
+                      {{ product.content }}
+                    </p>
+                    {% if product.variants.size > 2 %}
+                      <p class="add-option" style="color: #f00; font-size: 1.4rem; letter-spacing: 1px; line-height: 1.4; height: 4.4rem; margin-bottom: 1rem;">詳細ページから商品オプションを選択してください</p>
+                    {% else %}
+                      <div class="item-count">
+                        <form action="/cart/add" method="post">
+                          <div class="product-quantity_wrapper">
+                            <div class="product-quantity">
+                              <button type="button" id="p-minus" class="minus">ー</button>
+                              <input type="number" id="p-quantity" name="quantity" min="1" value="1">
+                              <button type="button" id="p-plus" class="plus">＋</button>
+                            </div>
+                          </div>
+                          <div class="cart-btn-wrapper">
+                            <input type="hidden" name="id" value="{{ product.variants[0].id }}">
+                            <button type="submit" class="cart-btn">カートに入れる</button>
+                          </div>
+                        </form>
+                      </div> <!-- /.item-count -->
+                    {% endif %}
+                  </div><!-- /.detail-content -->
+                </div><!-- /.item-content -->
+              </div><!-- /.modal-inner -->
+            </div><!-- /.remodal -->
+
+          {% endfor %}
+
+        </div><!-- /.recomend_item-list flex" -->
+    </div><!-- /.recomend-area -->
+  {%- endif -%}
+
+
+  {% render 'under-common-block' %}
+  
+</div><!-- /.p_under p_item-detail -->
+
+{% schema %}
+  {
+    "name": "item-detail02",
+    "presets": [
+      {
+        "name": "item-detail02"
+      }
+    ]
+  }
+{% endschema %}

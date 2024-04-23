@@ -1,0 +1,232 @@
+<!-- メインビジュアル -->
+<div class="under-mv p_item-list">
+  <div class="img-box obj-fit">
+    <picture>
+      <source srcset="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/under-mv_item-list.png" media="(max-width: 769px)">
+      <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/under-mv_item-list.png" alt="">
+    </picture>   
+  </div>
+  <div class="under_mv-ttl">
+    <h2>商品一覧</h2>
+    <p><span>L</span>INE UP</p>
+  </div>
+</div><!-- /.under-mv -->
+
+<div class="p_under p_item-list">
+
+  <div class="breadcrumb u-sp">
+    <nav>
+      <ol>
+        <li>
+          <a href="/"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/icon-home.svg" alt=""></a>
+        </li>
+        <li>カテゴリ名</li>
+      </ol>
+    </nav>
+  </div><!-- /.breadcrumb -->
+
+  <div class="inner flex-space">
+
+    {% render 'sidebar' %}
+
+    <div class="contents">
+
+      {% if cart.attributes.pagination != blank %}
+        {%- assign limit = cart.attributes.pagination %}
+      {% else %}
+        {% assign limit = 50 -%}
+      {% endif %}
+      {% paginate collection.products by limit %}
+
+      <div class="br-so">
+        <div class="breadcrumb u-pc">
+          <nav>
+            <ol>
+              <li>
+                <a href="{{ routes.root_url }}"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/Icon-home.svg" alt=""></a>
+              </li>
+              <li>{{ collection.title }}</li>
+            </ol>
+          </nav>
+        </div><!-- /.breadcrumb -->
+        <div class="sort">
+          <form  id="FacetSortForm">
+            {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+            <select name="sort_by" id="SortBy" aria-describedby="a11y-refresh-page-message">
+              <option hidden>並び替え</option>
+              <option value="manual">おすすめ順</option>
+              <option value="created-descending">新着順</option>
+              <option value="price-ascending">価格が安い順</option>
+              <option value="price-descending">価格が高い順</option>
+            </select>
+          </form>
+          <span class="arrow"></span>
+        </div><!-- /.sort -->
+      </div><!-- /.br-so -->
+
+      <div class="item-list flex">
+
+        {% assign has_products = false %}
+
+        {% for product in collection.products %}
+
+          {% assign has_products = true %}
+
+          <div class="item-card h-scale">
+            <div class="img-box obj-fit"><img src="{{ product.featured_image.src | img_url: 'master' }}" alt=""></div>
+            <div class="under-box b-rudius">
+              <p class="name">{{ product.title }}</p>
+              <p class="cate">
+                {% for collection in product.collections %}
+                  {% assign excluded_collections = 'all' | split: ',' %}
+                  {% unless excluded_collections contains collection.handle %}
+                    {{ collection.title }}
+                  {% endunless %}
+                {% endfor %}
+              </p>
+              <p class="price">{{ product.price | money }}</p>
+              <div class="to-detail b-rudius"><a href="{{ product.url }}">商品の詳細を見る</a></div>
+              {% if product.variants.size > 2 %}
+                <p class="add-option" style="color: #f00; font-size: 1.4rem; line-height: 1.4; height: 4.4rem; margin-bottom: 1rem;">詳細ページから商品オプションを選択してください</p>
+              {% else %}
+                <div class="add-cart">
+                  <form action="/cart/add" method="post">
+                    <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                    <input type="hidden" name="quantity" value="1">
+                    <button class="b-rudius" type="submit">カートに入れる</button>
+                  </form>
+                </div><!-- /.add-cart -->
+              {% endif %}
+            </div><!-- /.under-box -->
+            <div class="preview"><a href="#modal{{ forloop.index }}" data="{{ product.handle }}"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/icon-preview.svg" alt=""></a></div>
+          </div><!-- /.item-card -->
+
+          <div class="remodal" data-remodal-id="modal{{ forloop.index }}">
+            <button data-remodal-action="close" class="remodal-close"></button>
+            <div class="modal-inner">
+              <div class="item-content">
+                <div class="img-content">
+                  <div class="img-wrapper">
+                    <div class="swiper-preview" id="swiper-{{ forloop.index }}">
+                      <div class="swiper-wrapper">
+                        {% for image in product.images %}
+                          <div class="swiper-slide">
+                            <div class="img-wrap">
+                              <img src="{{ image.src | img_url: 'master' }}" alt="">
+                            </div>
+                          </div>
+                        {%- endfor -%}
+                      </div><!-- /.swiper-wrapper -->
+                    </div><!-- /.swiper03 -->
+                    <div class="thumb-list">
+                      {% for image in product.images %}
+                        <div class="thumb-item">
+                          <a class="thumb-link" href="javascript:void(0);" onclick="previewthumbnail({{ forloop.index }}, {{ forloop.parentloop.index }})">
+                            <img src="{{ image.src | img_url: 'master' }}" alt="">
+                          </a>
+                        </div>
+                      {%- endfor -%}
+                    </div><!-- /.thumb-list -->
+                  </div><!-- /.img-wrapper -->
+                </div><!-- /.img-conten -->
+                <div class="detail-content">
+                  <p class="name">{{ product.title }}</p>
+                  <p class="cate">
+                    {% for collection in product.collections %}
+                      {% assign excluded_collections = 'all' | split: ',' %}
+                      {% unless excluded_collections contains collection.handle %}
+                        {{ collection.title }}
+                      {% endunless %}
+                    {% endfor %}
+                  </p>
+                  {% if product.variants.size > 2 %}
+                    <p class="price">{{ product.price | money }}〜</p>
+                  {% else %}
+                    <p class="price">{{ product.price | money }}</p>
+                  {% endif %}
+                  <a class="btn-item" href="{{ product.url }}">商品の詳細を見る</a>
+                  <p class="block_tex">
+                    {{ product.content }}
+                  </p>
+                  {% if product.variants.size > 2 %}
+                    <p class="add-option" style="color: #f00; font-size: 1.4rem; letter-spacing: 1px; line-height: 1.4; height: 4.4rem; margin-bottom: 1rem;">詳細ページから商品オプションを選択してください</p>
+                  {% else %}
+                    <div class="item-count">
+                      <form action="/cart/add" method="post">
+                        <div class="product-quantity_wrapper">
+                          <div class="product-quantity">
+                            <button type="button" id="p-minus" class="minus">ー</button>
+                            <input type="number" id="p-quantity" name="quantity" min="1" value="1">
+                            <button type="button" id="p-plus" class="plus">＋</button>
+                          </div>
+                        </div>
+                        <div class="cart-btn-wrapper">
+                          <input type="hidden" name="id" value="{{ product.variants[0].id }}">
+                          <button type="submit" class="cart-btn">カートに入れる</button>
+                        </div>
+                      </form>
+                    </div> <!-- /.item-count -->
+                  {% endif %}
+                </div><!-- /.detail-content -->
+              </div><!-- /.item-content -->
+            </div><!-- /.modal-inner -->
+          </div><!-- /.remodal -->
+
+        {% endfor %}
+
+      </div><!-- /.item-list -->
+
+      {% unless has_products %}
+        <p class="unless-has">該当する商品がありません。</p>
+      {% endunless %}
+
+      <!-- ページネーション -->
+      {% if paginate.pages > 1 %}
+        {% render "pagination", paginate: paginate %}
+      {% endif %}
+
+  {% endpaginate %}
+
+    </div><!-- /.contants-->
+  </div><!-- /.inner flex -->
+
+  {% render 'under-common-block' %}
+
+</div><!-- /.p_under p_item-list -->
+
+
+{% javascript %}
+  //ソート
+  let parameters = {};
+    if (location.search.length) {
+    let keyValue = "";
+    let couples = location.search.substr(1).split('&');
+    for (let i = 0; i < couples.length; i++) {
+      keyValue = couples[i].split('=');
+      if (keyValue.length > 1) {
+        parameters[decodeURIComponent(keyValue[0])] = decodeURIComponent(keyValue[1]);
+      }
+    }
+  }
+  const selectElement = document.querySelector("#SortBy");
+  selectElement.addEventListener("change", function(event) {
+    parameters.sort_by = event.target.value;
+    const url = Object.keys(parameters).map(function(key) {
+      return encodeURIComponent(key) + '=' + encodeURIComponent(parameters[key])
+    }).join('&');
+    location.search = url;
+  });
+{% endjavascript %}
+
+
+
+{% schema %}
+  {
+    "name": "item-list",
+    "presets": [
+      {
+        "name": "item-list"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,550 @@
+<!-- メインビジュアル -->
+<div class="mv">
+
+<div class="swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide mv01 img-box obj-fit">
+      <picture>
+        <source srcset="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/mv01.jpg" media="(max-width: 769px)">
+        <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/mv01.jpg" alt="">
+      </picture>
+      <div class="mv-item h-scale">
+        <a href="/collections/fruits">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/mv01-item.png" alt="">
+          <p>
+            Fruit<br>
+            Gelato
+          </p>
+        </a>
+      </div><!-- /.mv-item -->      
+    </div><!-- /.swiper-slide -->
+    <div class="swiper-slide mv02 img-box obj-fit">
+      <picture>
+        <source srcset="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/mv02.jpg" media="(max-width: 769px)">
+        <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/mv02.jpg" alt="">
+      </picture>
+      <div class="mv-item h-scale">
+        <a href="/collections/fruits">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/mv02-item.png" alt="">
+          <p>
+            Fruit<br>
+            Gelato
+          </p>
+        </a>
+      </div><!-- /.mv-item --> 
+    </div><!-- /.swiper-slide -->
+    <div class="swiper-slide mv03 img-box obj-fit">
+      <picture>
+        <source srcset="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/mv03.jpg" media="(max-width: 769px)">
+        <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/mv03.jpg" alt="">
+      </picture>
+      <div class="mv-item h-scale">
+        <a href="/collections/milk">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/mv03-item.png" alt="">
+          <p>
+            Milk<br>
+            Gelato
+          </p>
+        </a>
+      </div><!-- /.mv-item --> 
+    </div><!-- /.swiper-slide -->
+    <div class="swiper-slide mv04 img-box obj-fit">
+      <picture>
+        <source srcset="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/mv04.jpg" media="(max-width: 769px)">
+        <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/mv04.jpg" alt="">
+      </picture>
+      <div class="mv-item h-scale">
+        <a href="/collections/macaron-set">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/mv04-item.png" alt="">
+          <p>
+            Gelato<br>
+            +<br>
+            Macaron
+          </p>
+        </a>
+      </div><!-- /.mv-item --> 
+    </div><!-- /.swiper-slide -->
+    <div class="swiper-slide mv05 img-box obj-fit">
+      <picture>
+        <source srcset="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/mv05.jpg" media="(max-width: 769px)">
+        <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/mv05.jpg" alt="">
+      </picture>
+      <div class="mv-item h-scale">
+        <a href="/collections/fruits">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/mv05-item.png" alt="">
+          <p>
+            Okinawa<br>
+            Fruit
+          </p>
+        </a>
+      </div><!-- /.mv-item --> 
+    </div><!-- /.swiper-slide -->
+    <div class="swiper-slide mv06 img-box obj-fit">
+      <picture>
+        <source srcset="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/mv06.jpg" media="(max-width: 769px)">
+        <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/mv06.jpg" alt="">
+      </picture>
+      <div class="mv-item h-scale">
+        <a href="/collections/first-gift">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/mv06-item.png" alt="">
+          <p>
+            For<br>
+            Gift
+          </p>
+        </a>
+      </div><!-- /.mv-item --> 
+    </div><!-- /.swiper-slide -->
+  </div><!-- /.swiper-wrapper -->
+</div><!-- /.swiper -->
+
+<div class="mv_ttl">
+  <p>
+    ひとくちで広がる、<br>
+    沖縄の恵み
+  </p>
+  <p class="sub">
+    規格外のフルーツから生まれた本格ジェラート
+  </p>
+</div>
+
+</div><!-- /.mv -->
+
+<section class="p-top_wrap01">
+
+<div class="banner-slider">
+  <div class="swiper-wrapper">
+    {% for block in section.blocks %}
+      <div class="swiper-slide img-box b-rudius">
+        <a href="{{ block.settings.link_banner }}">
+          <img src="{{ block.settings.image_banner | img_url: 'master' }}" alt="">
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="about-wrap">
+  <div class="head-ttl anime-ttl01"><span class="color">A</span><span>B</span><span>O</span><span>U</span><span>T</span> <span>U</span><span>S</span></div>
+  <div class="ttl anime-ttl02"><h2>規格外のフルーツから生まれた、<br>沖縄のジェラート</h2></div>
+  <p class="fadeIn">
+    テキスト入ります。テキスト入ります。テキスト入ります。<br>
+    テキスト入ります。テキスト入ります。<br>
+    テキスト入ります。テキスト入ります。テキスト入ります。<br>
+    テキスト入ります。テキスト入ります。<br>
+    テキスト入ります。テキスト入ります。テキスト入ります。<br>
+    テキスト入ります。テキスト入ります。
+  </p>
+  <div class="btn-area"><a class="btn" href="/pages/about/">もっと知る</a></div>
+  <div class="img-box anime-para">
+    <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-about-bg03.jpg" alt="">
+  </div>
+  <div class="about-bg01"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-about-bg01.png" alt=""></div>
+  <div class="about-bg02"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-about-bg02.png" alt=""></div>
+</div><!-- /.about -->
+
+</section><!-- /.p-top_wrap01 -->
+
+<section class="p-top_wrap02">
+<div class="head-ttl anime-ttl01"><span class="color">F</span><span>L</span><span>A</span><span>V</span><span>O</span><span>R</span><span>S</span></div>
+<div class="ttl anime-ttl02"><h2>フレーバー紹介</h2></div>
+<div class="flavor-slider">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item01.png" alt=""></div>
+        <p>Mango</p>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item02.png" alt=""></div>
+        <p>Water<br>melon</p>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item03.png" alt=""></div>
+        <p>Pineapple<br>&Tankan</p>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item04.png" alt=""></div>
+        <p>Framboise<br>(Raspberry)</p>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item05.png" alt=""></div>
+        <p>Shikuwasa</p>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item06.png" alt=""></div>
+        <p>Guava</p>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item07.png" alt=""></div>
+        <p>Gold<br>Barrel</p>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item08.png" alt=""></div>
+        <p>Straw<br>Berry</p>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item09.png" alt=""></div>
+        <p>Premium<br>Milk</p>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item10.png" alt=""></div>
+        <p>Beniimo</p>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item11.png" alt=""></div>
+        <p>Dark<br>Choco</p>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item12.png" alt=""></div>
+        <p>Passion<br>fruit</p>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item13.png" alt=""></div>
+        <p>Sakura</p>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item14.png" alt=""></div>
+        <p>Brown<br>Sugar</p>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item15.png" alt=""></div>
+        <p>Kuwacha</p>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item16.png" alt=""></div>
+        <p>Marron<br>glacé</p>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item17.png" alt=""></div>
+        <p>Mascarpone</p>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item18.png" alt=""></div>
+        <p>Mulberry<br>Yogurt</p>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item19.png" alt=""></div>
+        <p>Pistachio</p>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item20.png" alt=""></div>
+        <p>Sakuna</p>
+      </a>
+    </div>
+    <div class="swiper-slide">
+      <a href="/blogs/flavor/">
+        <div class="img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-flavors-item21.png" alt=""></div>
+        <p>Salty<br>Vanilla</p>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="btn-area"><a class="btn" href="/blogs/flavor/">詳しく味わう</a></div>
+</section><!-- /.p-top_wrap02 -->
+
+<section class="p-top_wrap03">
+<div class="inner">
+  <div class="head-ttl anime-ttl01"><span class="color">C</span><span>A</span><span>T</span><span>E</span><span>G</span><span>O</span><span>R</span><span>Y</span></div>
+  <div class="ttl anime-ttl02"><h2>商品カテゴリー</h2></div>
+
+  <div class="cate-group aji">
+    <p class="ttl fadeIn">味から選ぶ</p>
+    <div class="flex">
+      <div class="box b-rudius fadeIn">
+        <a href="/collections/fruits/">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item01.png" alt="">
+          <p>フルーツ系</p>
+        </a>
+      </div><!-- /.box -->
+      <div class="box b-rudius fadeIn">
+        <a href="/collections/milk/">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item02.png" alt="">
+          <p>ミルク系</p>
+        </a>
+      </div><!-- /.box -->
+      <div class="box b-rudius fadeIn">
+        <a href="/collections/macaron-set/">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item03.png" alt="">
+          <p>＋マカロン<br class="u-sp">セット</p>
+        </a>
+      </div><!-- /.box -->
+    </div><!-- /.flex -->
+  </div><!-- /.cate-group -->
+
+  <div class="cate-group youto">
+    <p class="ttl fadeIn">用途から選ぶ</p>
+    <div class="flex">
+      <div class="box b-rudius fadeIn">
+        <a href="/collections/first-gift/">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item04.png" alt="">
+          <p>初めての人に /<br>ギフトに</p>
+        </a>
+      </div><!-- /.box -->
+      <div class="box b-rudius fadeIn">
+        <a href="/collections/choice/">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item05.png" alt="">
+          <p>味を選びたい</p>
+        </a>
+      </div><!-- /.box -->
+      <div class="box b-rudius fadeIn">
+        <a href="/collections/party/">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item06.png" alt="">
+          <p>パーティー用</p>
+        </a>
+      </div><!-- /.box -->
+    </div><!-- /.flex -->
+  </div><!-- /.cate-group -->
+
+  <div class="cate-group konomi">
+    <p class="ttl fadeIn">好みから選ぶ</p>
+    <div class="flex">
+      <div class="box b-rudius fadeIn">
+        <a href="/collections/tastes/">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item07.png" alt="">
+          <p>色々味わいたい</p>
+        </a>
+      </div><!-- /.box -->
+      <div class="box b-rudius fadeIn">
+        <a href="/collections/vegan/">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item08.png" alt="">
+          <p>Veganフレンドリー</p>
+        </a>
+      </div><!-- /.box -->
+      <div class="box b-rudius fadeIn">
+        <a href="/collections/southern/">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item09.png" alt="">
+          <p>南国の食材</p>
+        </a>
+      </div><!-- /.box -->
+    </div><!-- /.flex -->
+  </div><!-- /.cate-group -->
+
+  <div class="btn-area"><a class="btn02" href="/collections/all/">全ての商品を見る</a></div>
+
+</div><!-- /.inner -->
+<div class="suika img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-category-bg02.png" alt=""></div>
+<div class="mango img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-category-bg03.png" alt=""></div>
+</section><!-- /.p-top_wrap03 -->
+
+<section class="p-top_wrap04">
+
+<div class="head-ttl anime-ttl01"><span class="color">P</span><span>I</span><span>C</span><span>K</span> <span>U</span><span>P</span></div>
+<div class="ttl anime-ttl02"><h2>おすすめ商品</h2> </div>
+
+<div class="inner pick-up_sp">
+  <div class="swiper-pickup itemcard-slider fadeIn">
+
+    <div class="swiper-wrapper">
+
+    {% for product in collections.all.products %}
+      <div class="swiper-slide item-card h-scale">
+        <div class="img-box obj-fit"><img src="{{ product.featured_image.src | img_url: 'master' }}" alt=""></div>
+        <div class="under-box b-rudius">
+          <p class="name">{{ product.title }}</p>
+          <p class="cate">
+            {% for collection in product.collections %}
+              {% assign excluded_collections = 'all' | split: ',' %}
+              {% unless excluded_collections contains collection.handle %}
+                {{ collection.title }}
+              {% endunless %}
+            {% endfor %}
+          </p>
+          {% if product.variants.size > 2 %}
+            <p class="price">{{ product.price | money }}〜</p>
+          {% else %}
+            <p class="price">{{ product.price | money }}</p>
+          {% endif %}
+          {% comment %} <p class="price">{{ product.price | money }}</p> {% endcomment %}
+          <div class="to-detail b-rudius"><a href="{{ product.url }}">商品の詳細を見る</a></div>
+          {% if product.variants.size > 2 %}
+            <p class="add-option" style="color: #f00; font-size: 1.4rem; line-height: 1.4; height: 4.4rem; margin-bottom: 1rem;">詳細ページから商品オプションを選択してください</p>
+          {% else %}
+            <div class="add-cart">
+              <form action="/cart/add" method="post">
+                <input type="hidden" name="id" value="{{ product.variants.first.id }}">
+                <input type="hidden" name="quantity" value="1">
+                <button class="b-rudius" type="submit">カートに入れる</button>
+              </form>
+            </div><!-- /.add-cart -->
+          {% endif %}
+        </div><!-- /.under-box -->
+        <div class="preview"><a href="#modal{{ forloop.index }}" data="{{ product.handle }}"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/icon-preview.svg" alt=""></a></div>
+      </div><!-- /.item-card -->
+
+      <div class="remodal" data-remodal-id="modal{{ forloop.index }}">
+        <button data-remodal-action="close" class="remodal-close"></button>
+        <div class="modal-inner">
+          <div class="item-content">
+            <div class="img-content">
+              <div class="img-wrapper">
+                <div class="swiper-preview" id="swiper-{{ forloop.index }}">
+                  <div class="swiper-wrapper">
+                    {% for image in product.images %}
+                      <div class="swiper-slide">
+                        <div class="img-wrap">
+                          <img src="{{ image.src | img_url: 'master' }}" alt="">
+                        </div>
+                      </div>
+                    {%- endfor -%}
+                  </div><!-- /.swiper-wrapper -->
+                </div><!-- /.swiper03 -->
+                <div class="thumb-list">
+                  {% for image in product.images %}
+                    <div class="thumb-item">
+                      <a class="thumb-link" href="javascript:void(0);" onclick="previewthumbnail({{ forloop.index }}, {{ forloop.parentloop.index }})">
+                        <img src="{{ image.src | img_url: 'master' }}" alt="">
+                      </a>
+                    </div>
+                  {%- endfor -%}
+                </div><!-- /.thumb-list -->
+              </div><!-- /.img-wrapper -->
+            </div><!-- /.img-conten -->
+            <div class="detail-content">
+              <p class="name">{{ product.title }}</p>
+              <p class="cate">
+                {% for collection in product.collections %}
+                  {% assign excluded_collections = 'all' | split: ',' %}
+                  {% unless excluded_collections contains collection.handle %}
+                    {{ collection.title }}
+                  {% endunless %}
+                {% endfor %}
+              </p>
+              {% if product.variants.size > 2 %}
+                <p class="price">{{ product.price | money }}〜</p>
+              {% else %}
+                <p class="price">{{ product.price | money }}</p>
+              {% endif %}
+              {% comment %} <p class="price">{{ product.price | money }}</p> {% endcomment %}
+              <a class="btn-item" href="{{ product.url }}">商品の詳細を見る</a>
+              <p class="block_tex">
+                {{ product.content }}
+              </p>
+              {% if product.variants.size > 2 %}
+                <p class="add-option" style="color: #f00; font-size: 1.4rem; letter-spacing: 1px; line-height: 1.4; height: 4.4rem; margin-bottom: 1rem;">詳細ページから商品オプションを選択してください</p>
+              {% else %}
+                <div class="item-count">
+                  <form action="/cart/add" method="post">
+                    <div class="product-quantity_wrapper">
+                      <div class="product-quantity">
+                        <button type="button" id="p-minus" class="minus">ー</button>
+                        <input type="number" id="p-quantity" name="quantity" min="1" value="1">
+                        <button type="button" id="p-plus" class="plus">＋</button>
+                      </div>
+                    </div>
+                    <div class="cart-btn-wrapper">
+                      <input type="hidden" name="id" value="{{ product.variants[0].id }}">
+                      <button type="submit" class="cart-btn">カートに入れる</button>
+                    </div>
+                  </form>
+                </div> <!-- /.item-count -->
+              {% endif %}
+            </div><!-- /.detail-content -->
+          </div><!-- /.item-content -->
+        </div><!-- /.modal-inner -->
+      </div><!-- /.remodal -->
+
+    {% endfor %}
+
+    </div><!-- /.swiper-wrapper -->
+  </div><!-- /.itemcard-slider -->
+  <div class="swiper-scrollbar"></div>
+</div><!-- /.inner -->
+
+
+<div class="btn-area"><a class="btn" href="/collections/all/">全ての商品を見る</a></div>
+
+<div class="txt-slider">
+
+  <div class="to-left">
+    <p>YANBARU GELATO YANBARU GELATO</p>
+    <p>YANBARU GELATO YANBARU GELATO</p>
+  </div>
+
+  <div class="to-right">
+    <p>OKINAWA ORGANIC GELATO OKINAWA ORGANIC GELATO</p>
+    <p>OKINAWA ORGANIC GELATO OKINAWA ORGANIC GELATO</p>
+  </div>
+
+</div><!-- /.txt-slider -->
+
+<div class="inner">
+  <div class="to-shoplist img-box fadeIn">
+    <a href="https://yanbarugelato.jp/access/" target="_blank">
+      <picture>
+        <source srcset="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-store-banner-img_sp.jpg" media="(max-width: 769px)">
+        <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-store-banner-img.jpg" alt="">
+      </picture>
+      <div class="btn-area"><span class="btn-link">店舗一覧を見る</span></div>
+    </a>
+  </div><!-- /.to-shoplist -->
+</div><!-- /.inner -->
+
+</section><!-- /.p-top_wrap04 -->
+
+
+{% schema %}
+  {
+    "name": "top-main",
+    "presets": [
+      {
+        "name": "top-main"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "banner-top",
+        "name": "Top Banner Block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_banner",
+            "label": "Banner Image"
+          },
+          {
+            "type": "url",
+            "id": "link_banner",
+            "label": "Banner Link"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

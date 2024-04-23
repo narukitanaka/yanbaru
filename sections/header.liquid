@@ -1,0 +1,81 @@
+<header id="header">
+  <div class="header_inner">
+    <div class="logo flex">
+      <a href="{{ routes.root_url }}">
+        <img class="ham-close" src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/logo01.png" alt="">
+        <img class="ham-open" src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/logo01-b.png" alt="">
+      </a>
+      <h1>公式オンラインストア | Online Store</h1>
+    </div>
+    <div class="header-menu">
+      <nav class="nav01">
+        <ul>
+          <li><a href="/pages/about/">やんばるジェラートについて</a></li>
+          <li><a href="/blogs/flavor/">フレーバー紹介</a></li>
+          <li><a href="/collections/all/">商品一覧</a></li>
+          <li><a href="/pages/faq/">よくあるご質問</a></li>
+        </ul>
+      </nav>
+      <nav class="nav02">
+        <ul>
+          <li><a href="/search/"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/icon-search.svg" alt=""></a></li>
+          <li>
+            <a href="/account/">
+              <img class="ham-close" src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/icon-login.svg" alt="">
+              <img class="ham-open" src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/icon-login-b.svg" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="/cart/">
+              <img class="ham-close" src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/icon-cart.svg" alt="">
+              <img class="ham-open" src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/icon-cart-b.svg" alt="">
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="hamberger-wrap">
+        <div class="hambager-content">
+          <button type="button" class="hambager">
+            <span class="c-line"></span>
+            <span class="c-line"></span>
+            <span class="c-line"></span>
+          </button>
+          <p class="ham-txt">Menu</p>
+        </div><!-- /.hambager-content -->
+      </div>
+    </div><!-- /.header-menu -->
+  </div><!-- /.header_inner-->
+</header>
+
+<div class="mega-menu">
+  <div class="mega-menu_inner">
+    <div class="serch">
+      <form method="get" action="/search">
+        <div class="header_search-inner">
+          <input type="text" name="q" placeholder="キーワードを入力">
+          <input type="hidden" name="type" value="product">
+          <input type="image" src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/icon-serch-b.svg" alt="検索" class="icn-search">
+        </div>
+      </form>
+    </div>
+    <nav class="nav01">
+      <ul>
+        <li><a href="{{ routes.root_url }}">ホーム</a></li>
+        <li><a href="/pages/about/">やんばるジェラートについて</a></li>
+        <li><a href="/blogs/flavor/">フレーバー紹介</a></li>
+        <li><a href="/collections/all/">商品一覧</a></li>
+        <li><a href="/pages/faq/">よくある質問</a></li>
+        <li><a href="https://yanbarugelato.jp/access/" target="_blank">店舗一覧<img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/icon-link.svg" alt=""></a></li>
+      </ul>
+    </nav>
+    <nav class="nav02">
+      <ul>
+        <li><a href="/pages/policy/">プライバシーポリシー</a></li>
+        <li><a href="/pages/terms/">特定商取引法に基づく表記</a></li>
+        <li><a href="/pages/company/">会社概要</a></li>
+        <li><a href="https://yanbarugelato-okinawa.foodre.jp/" target="_blank">コーポレートサイト<img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/icon-link.svg" alt=""></a></li>
+      </ul>
+    </nav>
+    <a class="insta" href="https://www.instagram.com/yanbarugelato_okinawa/" target="_blank"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/icon-insta.svg" alt="">yanbarugelato_okinawa</a>
+  </div><!-- /.mega-menu_inner -->
+</div><!-- /.mega-menu -->

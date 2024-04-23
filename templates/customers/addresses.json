@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-addresses",
+      "custom_css": [
+        "h1 {font-size: 2rem;}",
+        "button {display: block; margin: 2rem auto 0; }"
+      ],
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

@@ -1,0 +1,215 @@
+<!-- メインビジュアル -->
+<div class="under-mv p_flavors">
+  <div class="img-box obj-fit">
+    <picture>
+      <source srcset="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/under-flavor-mv.png" media="(max-width: 769px)">
+      <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/under-flavor-mv.png" alt="">
+    </picture>   
+  </div>
+  <div class="under_mv-ttl">
+    <h2>フレーバー紹介</h2>
+    <p><span>F</span>LAVORS</p>
+  </div>
+</div><!-- /.under-mv -->
+
+<div class="p_under p_flavors">
+
+  <ul class="tag-list">
+    <li><a href="/blogs/flavor">全て</a></li>
+    {% assign all_tags = blogs['flavor'].tags %}
+    {% for tag in all_tags %}
+      <li><a href="/blogs/flavor/tagged/{{ tag | handleize }}">{{ tag }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <div class="flavors">
+    <div class="inner flex">
+
+      {% if current_tags %}
+        {% for article in blogs['flavor'].articles %}
+          {% if article.tags contains current_tags.first %}
+            <div class="box">
+              <p class="name">{{ article.title }}</p>
+              <div class="img-box obj-fit"><img src="{{ article.image.src | img_url: 'master' }}" alt=""></div>
+              <p class="txt">
+                {{ article.content }}
+              </p>
+              <div class="tag-area">
+                {% for tag in article.tags %}
+                  <p class="tag">#{{ tag }}</p>
+                {% endfor %}
+              </div>
+              <button><a href="#modal{{ forloop.index }}">生産者について</a></button>
+              <div class="info">
+                <p>栄養成分表示<br class="u-sp">（100gあたり）<span class="arrow"></span></p>
+                <div class="info-content">
+                  <table>
+                    {% if article.metafields.custom._heat != blank %}
+                      <tr>
+                        <th>熱量</th>
+                        <td>{{ article.metafields.custom._heat }}</td>
+                      </tr>
+                    {% endif %}
+                    {% if article.metafields.custom._protein != blank %}
+                    <tr>
+                      <th>タンパク質</th>
+                      <td>{{ article.metafields.custom._protein }}</td>
+                    </tr>
+                    {% endif %}
+                    {% if article.metafields.custom._lipid != blank %}
+                    <tr>
+                      <th>脂質</th>
+                      <td>{{ article.metafields.custom._lipid }}</td>
+                    </tr>
+                    {% endif %}
+                    {% if article.metafields.custom._carbohydrates != blank %}
+                    <tr>
+                      <th>炭水化物</th>
+                      <td>{{ article.metafields.custom._carbohydrates }}</td>
+                    </tr>
+                    {% endif %}
+                    {% if article.metafields.custom._salt != blank %}
+                    <tr>
+                      <th>食塩相当量</th>
+                      <td>{{ article.metafields.custom._salt }}</td>
+                    </tr>
+                    {% endif %}
+                  </table>
+                </div>
+              </div><!-- /.info -->
+            </div><!-- /.box -->
+
+            <div class="remodal productor" data-remodal-id="modal{{ forloop.index }}">
+              <button data-remodal-action="close" class="remodal-close"></button>
+              <div class="modal-inner">
+                {% if article.metafields.custom._producer-img != blank %}
+                  <div class="left">
+                    <div class="img-box">
+                      <img src="{{ article.metafields.custom._producer-img  | img_url: 'master' }}" alt="">
+                    </div>
+                  </div>
+                {% endif %}
+                <div class="right">
+                  {% if article.metafields.custom._producer-name != blank %}
+                    <p class="productor-name">{{ article.metafields.custom._producer-name }}</p>
+                  {% endif %}
+                  {% if article.metafields.custom._producer-text != blank %}
+                    <p class="productor-txt">
+                      {{ article.metafields.custom._producer-text | newline_to_br }}
+                    </p>
+                  {% endif %}
+                  {% if article.metafields.custom._producer-address != blank %}
+                    <p class="productor-address">
+                      {{ article.metafields.custom._producer-address | newline_to_br }}
+                    </p>
+                  {% endif %}
+                </div>
+              </div><!-- /.modal-inner -->
+            </div><!-- /.remodal -->
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        {% for article in blogs['flavor'].articles %}
+          <div class="box">
+            <p class="name">{{ article.title }}</p>
+            <div class="img-box obj-fit"><img src="{{ article.image.src | img_url: 'master' }}" alt=""></div>
+            <p class="txt">
+              {{ article.content }}
+            </p>
+            <div class="tag-area">
+              {% for tag in article.tags %}
+                <p class="tag">#{{ tag }}</p>
+              {% endfor %}
+            </div>
+            <button><a href="#modal{{ forloop.index }}">生産者について</a></button>
+            <div class="info">
+              <p>栄養成分表示<br class="u-sp">（100gあたり）<span class="arrow"></span></p>
+              <div class="info-content">
+                <table>
+                  {% if article.metafields.custom._heat != blank %}
+                    <tr>
+                      <th>熱量</th>
+                      <td>{{ article.metafields.custom._heat }}</td>
+                    </tr>
+                  {% endif %}
+                  {% if article.metafields.custom._protein != blank %}
+                  <tr>
+                    <th>タンパク質</th>
+                    <td>{{ article.metafields.custom._protein }}</td>
+                  </tr>
+                  {% endif %}
+                  {% if article.metafields.custom._lipid != blank %}
+                  <tr>
+                    <th>脂質</th>
+                    <td>{{ article.metafields.custom._lipid }}</td>
+                  </tr>
+                  {% endif %}
+                  {% if article.metafields.custom._carbohydrates != blank %}
+                  <tr>
+                    <th>炭水化物</th>
+                    <td>{{ article.metafields.custom._carbohydrates }}</td>
+                  </tr>
+                  {% endif %}
+                  {% if article.metafields.custom._salt != blank %}
+                  <tr>
+                    <th>食塩相当量</th>
+                    <td>{{ article.metafields.custom._salt }}</td>
+                  </tr>
+                  {% endif %}
+                </table>
+              </div>
+            </div><!-- /.info -->
+          </div><!-- /.box -->
+
+          <div class="remodal productor" data-remodal-id="modal{{ forloop.index }}">
+            <button data-remodal-action="close" class="remodal-close"></button>
+            <div class="modal-inner">
+              {% if article.metafields.custom._producer-img != blank %}
+                <div class="left">
+                  <div class="img-box">
+                    <img src="{{ article.metafields.custom._producer-img  | img_url: 'master' }}" alt="">
+                  </div>
+                </div>
+              {% endif %}
+              <div class="right">
+                {% if article.metafields.custom._producer-name != blank %}
+                  <p class="productor-name">{{ article.metafields.custom._producer-name }}</p>
+                {% endif %}
+                {% if article.metafields.custom._producer-text != blank %}
+                  <p class="productor-txt">
+                    {{ article.metafields.custom._producer-text | newline_to_br }}
+                  </p>
+                {% endif %}
+                {% if article.metafields.custom._producer-address != blank %}
+                  <p class="productor-address">
+                    {{ article.metafields.custom._producer-address | newline_to_br }}
+                  </p>
+                {% endif %}
+              </div>
+            </div><!-- /.modal-inner -->
+          </div><!-- /.remodal -->
+        {% endfor %}
+      {% endif %}
+
+
+    </div><!-- /.inner -->
+
+  </div><!-- /.flavors -->
+
+
+  {% render 'under-common-block' %}
+
+</div><!-- /.p_under p_item-list -->
+
+
+
+{% schema %}
+  {
+    "name": "flavor-list",
+    "presets": [
+      {
+        "name": "flavor-list"
+      }
+    ]
+  }
+{% endschema %}
