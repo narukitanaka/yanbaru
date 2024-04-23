@@ -229,37 +229,61 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 
   //トップ おすすめ商品スライダー
-  const swiperpickup = new Swiper(".swiper-pickup", {
-    loop: true,
-    autoplay: {
-      delay: 3000,
-    },
-    speed: 1000,
-    slidesPerView: 1.5,
-    spaceBetween: 30,
-    //スクロールバー表示設定
-    scrollbar: {
-      el: '.swiper-scrollbar', //要素指定
-    },
-    breakpoints: {
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 30,
-      },
-      1100: {
-        slidesPerView: 4,
-        spaceBetween: 40,
-      }
-    },
-  });
+  // const swiperpickup = new Swiper(".swiper-pickup", {
+  //   loop: true,
+  //   autoplay: {
+  //     delay: 3000,
+  //   },
+  //   speed: 1000,
+  //   slidesPerView: 1.5,
+  //   spaceBetween: 30,
+  //   //スクロールバー表示設定
+  //   scrollbar: {
+  //     el: '.swiper-scrollbar', //要素指定
+  //   },
+  //   breakpoints: {
+  //     768: {
+  //       slidesPerView: 3,
+  //       spaceBetween: 30,
+  //     },
+  //     1100: {
+  //       slidesPerView: 4,
+  //       spaceBetween: 40,
+  //     }
+  //   },
+  // });
 
+  document.addEventListener("DOMContentLoaded", function() {
+    const swiperContainer = document.querySelector(".swiper-pickup");
+    const slides = swiperContainer.querySelectorAll(".swiper-slide");
+    const numberOfSlides = slides.length;
+
+    const swiperOptions = {
+        speed: 1000,
+        slidesPerView: 1.5,
+        spaceBetween: 30,
+        scrollbar: {
+            el: '.swiper-scrollbar',
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+            1100: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+            }
+        },
+        loop: numberOfSlides > 3, // スライドが3枚より多い場合にのみループを有効にする
+        autoplay: numberOfSlides > 3 ? { delay: 3000 } : false, // スライドが3枚より多い場合にのみ自動再生を有効にする
+    };
+
+    const swiperpickup = new Swiper(".swiper-pickup", swiperOptions);
 });
 
 
-
-////////////////////////////////////////////////////////////////////////////////////////
-// モーダルの表示内容を管理
-///////////////////////////////////////////////////////////////////////////////////////
+});
 
 
 
@@ -325,35 +349,3 @@ Parallax02.forEach((Parallax02) => {
     }
   }); 
 });
-
-
-
-////////////////////////////////////////////////////////////////////////////////////////
-// Googleカレンダー　カスタマイズ
-///////////////////////////////////////////////////////////////////////////////////////
-let cal1 = '<iframe src="https://calendar.google.com/calendar/embed?src=c_07fb1a7904388e386f8c339a9585b8b26cdf6a223735786e312aa797378ed48a%40group.calendar.google.com&ctz=Asia%2FTokyo';
-
-let cal2 ='" style="border: 0" width="100%" frameborder="0" scrolling="no"></iframe>';
-
-  //来月のカレンダー
-  let date = new Date;
-  let Year = date.getFullYear();//年を取得
-  let Month = date.getMonth() + 1;//月を取得.0からでなく、１からカウントを始める
-  let nextMonth = Month + 1;
-
-  //12月を超えると1月に
-  if (nextMonth > 12) {
-    nextMonth -= 12;
-    Year += 1;
-  };
-
-  //10以下を２ケタに
-  if (nextMonth < 10) {
-    nextMonth = "0" + nextMonth;
-  };
-
-  //日付を出力
-  let dates = "&dates=" + String(Year) + String(nextMonth) + "01%2F" + String(Year) + String(nextMonth) + "01";
-
-  document.getElementById("calendar1").innerHTML = cal1 + cal2;
-  document.getElementById("calendar2").innerHTML = cal1 + dates + cal2;

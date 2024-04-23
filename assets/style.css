@@ -1815,6 +1815,9 @@ top
     position: relative;
   }
 }
+.p-top_wrap04 .inner .item-card {
+  max-width: 27rem;
+}
 @media screen and (max-width: 768px) {
   .p-top_wrap04 .inner .swiper-scrollbar {
     position: absolute;

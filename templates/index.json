@@ -36,21 +36,21 @@
           "type": "banner-top",
           "settings": {
             "image_banner": "shopify:\/\/shop_images\/top-banner01.png",
-            "link_banner": ""
+            "link_banner": "shopify:\/\/collections\/fruits"
           }
         },
         "banner_top_HHkTfT": {
           "type": "banner-top",
           "settings": {
             "image_banner": "shopify:\/\/shop_images\/top-banner02.jpg",
-            "link_banner": ""
+            "link_banner": "shopify:\/\/collections\/choice"
           }
         },
         "banner_top_UCHwKp": {
           "type": "banner-top",
           "settings": {
             "image_banner": "shopify:\/\/shop_images\/top-banner03.jpg",
-            "link_banner": ""
+            "link_banner": "shopify:\/\/collections\/vegan"
           }
         }
       },
