@@ -229,63 +229,46 @@ document.addEventListener('DOMContentLoaded', (event) => {
   });
 
   //トップ おすすめ商品スライダー
-  // const swiperpickup = new Swiper(".swiper-pickup", {
-  //   loop: true,
-  //   autoplay: {
-  //     delay: 3000,
-  //   },
-  //   speed: 1000,
-  //   slidesPerView: 1.5,
-  //   spaceBetween: 30,
-  //   //スクロールバー表示設定
-  //   scrollbar: {
-  //     el: '.swiper-scrollbar', //要素指定
-  //   },
-  //   breakpoints: {
-  //     768: {
-  //       slidesPerView: 3,
-  //       spaceBetween: 30,
-  //     },
-  //     1100: {
-  //       slidesPerView: 4,
-  //       spaceBetween: 40,
-  //     }
-  //   },
-  // });
-
-  document.addEventListener("DOMContentLoaded", function() {
-    const swiperContainer = document.querySelector(".swiper-pickup");
-    const slides = swiperContainer.querySelectorAll(".swiper-slide");
-    const numberOfSlides = slides.length;
-
-    const swiperOptions = {
-        speed: 1000,
-        slidesPerView: 1.5,
+  const swiperpickup = new Swiper(".swiper-pickup", {
+    loop: true,
+    autoplay: {
+      delay: 3000,
+    },
+    speed: 1000,
+    slidesPerView: 1.5,
+    spaceBetween: 30,
+    //スクロールバー表示設定
+    scrollbar: {
+      el: '.swiper-scrollbar', //要素指定
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 3,
         spaceBetween: 30,
-        scrollbar: {
-            el: '.swiper-scrollbar',
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-            },
-            1100: {
-                slidesPerView: 4,
-                spaceBetween: 40,
-            }
-        },
-        loop: numberOfSlides > 3, // スライドが3枚より多い場合にのみループを有効にする
-        autoplay: numberOfSlides > 3 ? { delay: 3000 } : false, // スライドが3枚より多い場合にのみ自動再生を有効にする
-    };
-
-    const swiperpickup = new Swiper(".swiper-pickup", swiperOptions);
-});
+      },
+      1100: {
+        slidesPerView: 4,
+        spaceBetween: 40,
+        watchSlidesProgress: true,
+      }
+    },
+  });
 
 
 });
 
 
+
+////////////////////////////////////////////////////////////////////////////////////////
+// リモーダル内の空要素
+///////////////////////////////////////////////////////////////////////////////////////
+const els = document.querySelectorAll(".block_tex");
+
+els.forEach((el) => {
+  if (el.innerHTML === null || !el.innerHTML.match(/\S/g)) {
+    el.classList.add("empty");
+  }
+})
 
 
 
