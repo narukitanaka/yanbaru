@@ -1,14 +1,16 @@
-@use "variable"as v;
-@use "common"as c;
+@use "variable" as v;
+@use "common" as c;
 /*************************************************
 top
 *************************************************/
 .mv {
   width: 100vw;
   height: 100vh;
-  position: relative; 
+  max-height: 800px;
+  position: relative;
   .swiper {
     height: 100vh;
+    max-height: 800px;
     .swiper-slide {
       position: relative;
     }
@@ -41,7 +43,7 @@ top
       justify-content: center;
       width: 100%;
       height: 100%;
-      img  {
+      img {
         display: block;
         // width: v.pxtovw(270);
         width: 100%;
@@ -63,7 +65,7 @@ top
         position: absolute;
         bottom: v.pxtovw(8);
         left: v.pxtovw(60);
-        background-color: rgba($color: #000000, $alpha: .41);
+        background-color: rgba($color: #000000, $alpha: 0.41);
         @include c.mq() {
           width: v.pxtovw_sp(70);
           left: v.pxtovw_sp(25);
@@ -128,9 +130,15 @@ top
 
 .p-top_wrap01 {
   padding-top: 8rem;
+  // バナー公開後に削除
+  // padding-top: 14rem;
+  //ここまで
   background-color: #000;
   @include c.mq() {
     padding-top: 2rem;
+    // バナー公開後に削除
+    // padding-top: 10rem;
+    //ここまで
   }
   .banner-slider {
     margin-bottom: 15rem;
@@ -138,12 +146,15 @@ top
       margin-bottom: 11rem;
     }
     .swiper-wrapper {
-      transition-timing-function:linear;
+      transition-timing-function: linear;
     }
   }
   .about-wrap {
     position: relative;
-    .head-ttl,h2,p,a {
+    .head-ttl,
+    h2,
+    p,
+    a {
       color: #fff;
     }
     .head-ttl {
@@ -158,28 +169,29 @@ top
       margin-bottom: 5rem;
       @include c.mq() {
         position: relative;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
         z-index: 2;
       }
       h2 {
         font-size: 3rem;
-        line-height: 1.5;
+        line-height: 1.7;
+        letter-spacing: 4px;
         @include c.mq() {
           font-size: 1.7rem;
-          letter-spacing: 2px;
-          line-height: 1.7;
+          letter-spacing: 3px;
         }
       }
     }
     p {
       text-align: center;
-      line-height: 2.2;
+      line-height: 2.7;
       margin-bottom: 5rem;
       @include c.mq() {
         position: relative;
         width: 90%;
         max-width: 45rem;
         text-align: left;
+        letter-spacing: 2px;
         margin: 0 auto 4rem;
         z-index: 2;
       }
@@ -197,15 +209,16 @@ top
       }
     }
     .img-box {
-      aspect-ratio: 1/.23;
+      aspect-ratio: 1/0.23;
       @include c.mq() {
-        aspect-ratio: 1/.45;
+        aspect-ratio: 1/0.45;
       }
     }
-    .about-bg01,.about-bg02 {
+    .about-bg01,
+    .about-bg02 {
       position: absolute;
       @include c.mq() {
-        opacity: .3;
+        opacity: 0.3;
         z-index: 1;
       }
       img {
@@ -225,7 +238,7 @@ top
     }
     .about-bg02 {
       width: v.pxtovw(414);
-      right:  v.pxtovw(-70);
+      right: v.pxtovw(-70);
       top: v.pxtovw(-69);
       @include c.mq() {
         width: v.pxtovw_sp(190);
@@ -244,7 +257,10 @@ top
   @include c.mq() {
     padding: 7rem 0 14.3rem;
   }
-  .head-ttl,h2,p,a {
+  .head-ttl,
+  h2,
+  p,
+  a {
     color: #fff;
   }
   .ttl {
@@ -264,7 +280,7 @@ top
       margin-bottom: 5rem;
     }
     .swiper-wrapper {
-      transition-timing-function:linear
+      transition-timing-function: linear;
     }
     .swiper-slide {
       position: relative;
@@ -283,7 +299,7 @@ top
         justify-content: center;
         border: 1px solid #fff;
         border-radius: 50%;
-        background-color: rgba($color: #000000, $alpha: .41);
+        background-color: rgba($color: #000000, $alpha: 0.41);
       }
     }
   }
@@ -301,17 +317,19 @@ top
 .p-top_wrap03 {
   position: relative;
   padding: 5.4rem 0 6rem;
-  background: url(https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-category-bg01.png) no-repeat top/cover;
+  background: url(https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-category-bg01.png)
+    no-repeat top/cover;
   background-color: #fff;
   @include c.mq() {
-    background: url(https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-category-bg01.png) no-repeat top/contain;
+    background: url(https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-category-bg01.png)
+      no-repeat top/contain;
     background-color: #fff;
     padding: 6.7rem 0 10rem;
   }
   .head-ttl {
     color: v.$main-txt;
     .color {
-      color: #0EA514;
+      color: #0ea514;
     }
   }
   .ttl {
@@ -445,16 +463,18 @@ top
     text-align: center;
     .btn02 {
       &:hover {
-        background-color: #0EA514;
-        border: 1px solid #0EA514;
+        background-color: #0ea514;
+        border: 1px solid #0ea514;
         color: #fff;
         &::before {
-          background: url(https://cdn.shopify.com/s/files/1/0623/5966/6733/files/arrow01.svg) no-repeat center/contain;
+          background: url(https://cdn.shopify.com/s/files/1/0623/5966/6733/files/arrow01.svg)
+            no-repeat center/contain;
         }
       }
     }
   }
-  .suika,.mango {
+  .suika,
+  .mango {
     position: absolute;
   }
   .suika {
@@ -490,7 +510,7 @@ top
   .head-ttl {
     color: #fff;
     .color {
-      color: #20B9A7;
+      color: #20b9a7;
     }
   }
   .ttl {
@@ -510,6 +530,9 @@ top
         transform: translateX(5%);
         position: relative;
       }
+    }
+    .item-card {
+      max-width: 27rem;
     }
     .swiper-scrollbar {
       @include c.mq() {
@@ -537,8 +560,8 @@ top
     }
     .btn {
       &:hover {
-        background-color: #20B9A7;
-        border: 1px solid #20B9A7;
+        background-color: #20b9a7;
+        border: 1px solid #20b9a7;
       }
     }
   }
@@ -562,15 +585,15 @@ top
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50% , -50%);
+      transform: translate(-50%, -50%);
       text-align: center;
       @include c.mq() {
         display: block;
         width: v.pxtovw_sp(247);
       }
       .btn-link {
-        background-color: rgba($color: #000000, $alpha: .41);
-        transition: all .3s;
+        background-color: rgba($color: #000000, $alpha: 0.41);
+        transition: all 0.3s;
         &:hover {
           background-color: #000;
         }
@@ -587,9 +610,10 @@ top
     display: inline-block;
     font-family: v.$cinzel;
     color: #fff;
-    opacity: .8;
+    opacity: 0.8;
   }
-  .to-left,.to-right {
+  .to-left,
+  .to-right {
     white-space: nowrap;
     p {
       line-height: 1;

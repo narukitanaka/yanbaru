@@ -35,22 +35,22 @@
         "banner_top_BBnCrM": {
           "type": "banner-top",
           "settings": {
-            "image_banner": "shopify:\/\/shop_images\/top-banner01.png",
-            "link_banner": ""
+            "image_banner": "shopify:\/\/shop_images\/mix.png",
+            "link_banner": "shopify:\/\/collections\/ミックスセット"
           }
         },
         "banner_top_HHkTfT": {
           "type": "banner-top",
           "settings": {
-            "image_banner": "shopify:\/\/shop_images\/top-banner02.jpg",
-            "link_banner": ""
+            "image_banner": "shopify:\/\/shop_images\/set.png",
+            "link_banner": "shopify:\/\/collections\/tastes"
           }
         },
         "banner_top_UCHwKp": {
           "type": "banner-top",
           "settings": {
             "image_banner": "shopify:\/\/shop_images\/top-banner03.jpg",
-            "link_banner": ""
+            "link_banner": "shopify:\/\/collections\/vegan"
           }
         }
       },

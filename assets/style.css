@@ -8,7 +8,6 @@ common-style
 
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -77,7 +76,8 @@ a {
   }
 }
 
-h2, h3 {
+h2,
+h3 {
   font-family: "Zen Old Mincho", serif;
   letter-spacing: 2px;
 }
@@ -126,7 +126,9 @@ input[type=button]:focus {
   overflow: hidden;
 }
 
-.btn-area .btn, .btn-area .btn02, .btn-area .btn-link {
+.btn-area .btn,
+.btn-area .btn02,
+.btn-area .btn-link {
   position: relative;
   display: inline-block;
   padding: 1rem 5rem;
@@ -135,7 +137,9 @@ input[type=button]:focus {
   font-size: 1.6rem;
   transition: all 0.3s;
 }
-.btn-area .btn::before, .btn-area .btn02::before, .btn-area .btn-link::before {
+.btn-area .btn::before,
+.btn-area .btn02::before,
+.btn-area .btn-link::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -284,7 +288,7 @@ input[type=button]:focus {
   }
 }
 .item-card .under-box .add-cart button:hover {
-  background-color: #9F0D00;
+  background-color: #9f0d00;
 }
 .item-card .under-box .add-cart button::before {
   position: absolute;
@@ -403,7 +407,7 @@ input[type=button]:focus {
 .remodal .detail-content {
   width: 100%;
   letter-spacing: normal;
-  color: #1C0702;
+  color: #1c0702;
 }
 @media screen and (max-width: 768px) {
   .remodal .detail-content {
@@ -465,7 +469,7 @@ input[type=button]:focus {
   }
 }
 .remodal .detail-content .btn-item:hover {
-  background-color: #9F0D00;
+  background-color: #9f0d00;
 }
 .remodal .detail-content .block_tex {
   height: 13.7rem;
@@ -510,7 +514,7 @@ input[type=button]:focus {
 .remodal .detail-content .item-count .product-quantity_wrapper .product-quantity {
   display: flex;
   background: #fff;
-  border: 1px solid #29294A;
+  border: 1px solid #29294a;
   text-align: center;
   font-size: 16px;
   height: 44px;
@@ -556,10 +560,12 @@ input[type=button]:focus {
   aspect-ratio: 1/0.95;
 }
 .remodal .detail-content .cart-btn:hover {
-  background-color: #9F0D00;
+  background-color: #9f0d00;
 }
 
-.product-options p, .product-options label, .product-options select {
+.product-options p,
+.product-options label,
+.product-options select {
   font-family: "Zen Old Mincho", serif;
 }
 .product-options p {
@@ -590,6 +596,10 @@ input[type=button]:focus {
   font-size: 1.4rem;
   color: #fff;
   margin-bottom: 1rem;
+}
+
+.empty {
+  display: none;
 }
 
 /*************************************************
@@ -737,7 +747,8 @@ header.is-megamenu-icon .header_inner .ham-close {
 header.is-megamenu-icon .header_inner .logo h1 {
   color: #000;
 }
-header p, header a {
+header p,
+header a {
   color: #fff;
 }
 header .header_inner {
@@ -1006,7 +1017,8 @@ header .header_inner .header-menu nav ul li a {
   margin: 0 auto;
   padding: 12rem 0 3rem;
 }
-.mega-menu .mega-menu_inner a, .mega-menu .mega-menu_inner input {
+.mega-menu .mega-menu_inner a,
+.mega-menu .mega-menu_inner input {
   font-family: "Zen Old Mincho", serif;
 }
 .mega-menu .mega-menu_inner .serch {
@@ -1023,6 +1035,12 @@ header .header_inner .header-menu nav ul li a {
   width: 100%;
   font-size: 1.3rem;
   padding: 1.2rem 2rem;
+}
+@media screen and (max-width: 768px) {
+  .mega-menu .mega-menu_inner .serch .header_search-inner input[type=text] {
+    font-weight: 700;
+    color: #001022;
+  }
 }
 .mega-menu .mega-menu_inner .serch .header_search-inner .icn-search {
   width: 14px;
@@ -1043,7 +1061,7 @@ header .header_inner .header-menu nav ul li a {
 }
 .mega-menu .mega-menu_inner .nav01 ul li {
   padding: 1.5rem 0;
-  border-bottom: 1px dotted #1A1311;
+  border-bottom: 1px dotted #1a1311;
 }
 .mega-menu .mega-menu_inner .nav01 ul li a {
   font-size: 1.5rem;
@@ -1292,10 +1310,12 @@ top
 .mv {
   width: 100vw;
   height: 100vh;
+  max-height: 800px;
   position: relative;
 }
 .mv .swiper {
   height: 100vh;
+  max-height: 800px;
 }
 .mv .swiper .swiper-slide {
   position: relative;
@@ -1443,7 +1463,10 @@ top
 .p-top_wrap01 .about-wrap {
   position: relative;
 }
-.p-top_wrap01 .about-wrap .head-ttl, .p-top_wrap01 .about-wrap h2, .p-top_wrap01 .about-wrap p, .p-top_wrap01 .about-wrap a {
+.p-top_wrap01 .about-wrap .head-ttl,
+.p-top_wrap01 .about-wrap h2,
+.p-top_wrap01 .about-wrap p,
+.p-top_wrap01 .about-wrap a {
   color: #fff;
 }
 @media screen and (max-width: 768px) {
@@ -1460,24 +1483,24 @@ top
 @media screen and (max-width: 768px) {
   .p-top_wrap01 .about-wrap .ttl {
     position: relative;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     z-index: 2;
   }
 }
 .p-top_wrap01 .about-wrap .ttl h2 {
   font-size: 3rem;
-  line-height: 1.5;
+  line-height: 1.7;
+  letter-spacing: 4px;
 }
 @media screen and (max-width: 768px) {
   .p-top_wrap01 .about-wrap .ttl h2 {
     font-size: 1.7rem;
-    letter-spacing: 2px;
-    line-height: 1.7;
+    letter-spacing: 3px;
   }
 }
 .p-top_wrap01 .about-wrap p {
   text-align: center;
-  line-height: 2.2;
+  line-height: 2.7;
   margin-bottom: 5rem;
 }
 @media screen and (max-width: 768px) {
@@ -1486,6 +1509,7 @@ top
     width: 90%;
     max-width: 45rem;
     text-align: left;
+    letter-spacing: 2px;
     margin: 0 auto 4rem;
     z-index: 2;
   }
@@ -1508,16 +1532,19 @@ top
     aspect-ratio: 1/0.45;
   }
 }
-.p-top_wrap01 .about-wrap .about-bg01, .p-top_wrap01 .about-wrap .about-bg02 {
+.p-top_wrap01 .about-wrap .about-bg01,
+.p-top_wrap01 .about-wrap .about-bg02 {
   position: absolute;
 }
 @media screen and (max-width: 768px) {
-  .p-top_wrap01 .about-wrap .about-bg01, .p-top_wrap01 .about-wrap .about-bg02 {
+  .p-top_wrap01 .about-wrap .about-bg01,
+  .p-top_wrap01 .about-wrap .about-bg02 {
     opacity: 0.3;
     z-index: 1;
   }
 }
-.p-top_wrap01 .about-wrap .about-bg01 img, .p-top_wrap01 .about-wrap .about-bg02 img {
+.p-top_wrap01 .about-wrap .about-bg01 img,
+.p-top_wrap01 .about-wrap .about-bg02 img {
   width: 100%;
 }
 .p-top_wrap01 .about-wrap .about-bg01 {
@@ -1557,7 +1584,10 @@ top
     padding: 7rem 0 14.3rem;
   }
 }
-.p-top_wrap02 .head-ttl, .p-top_wrap02 h2, .p-top_wrap02 p, .p-top_wrap02 a {
+.p-top_wrap02 .head-ttl,
+.p-top_wrap02 h2,
+.p-top_wrap02 p,
+.p-top_wrap02 a {
   color: #fff;
 }
 .p-top_wrap02 .ttl {
@@ -1627,7 +1657,7 @@ top
   color: #001022;
 }
 .p-top_wrap03 .head-ttl .color {
-  color: #0EA514;
+  color: #0ea514;
 }
 .p-top_wrap03 .ttl {
   margin-bottom: 7rem;
@@ -1742,14 +1772,15 @@ top
   text-align: center;
 }
 .p-top_wrap03 .btn-area .btn02:hover {
-  background-color: #0EA514;
-  border: 1px solid #0EA514;
+  background-color: #0ea514;
+  border: 1px solid #0ea514;
   color: #fff;
 }
 .p-top_wrap03 .btn-area .btn02:hover::before {
   background: url(https://cdn.shopify.com/s/files/1/0623/5966/6733/files/arrow01.svg) no-repeat center/contain;
 }
-.p-top_wrap03 .suika, .p-top_wrap03 .mango {
+.p-top_wrap03 .suika,
+.p-top_wrap03 .mango {
   position: absolute;
 }
 .p-top_wrap03 .suika {
@@ -1792,7 +1823,7 @@ top
   color: #fff;
 }
 .p-top_wrap04 .head-ttl .color {
-  color: #20B9A7;
+  color: #20b9a7;
 }
 .p-top_wrap04 .ttl {
   margin-bottom: 6.5rem;
@@ -1814,6 +1845,9 @@ top
     transform: translateX(5%);
     position: relative;
   }
+}
+.p-top_wrap04 .inner .item-card {
+  max-width: 27rem;
 }
 @media screen and (max-width: 768px) {
   .p-top_wrap04 .inner .swiper-scrollbar {
@@ -1842,8 +1876,8 @@ top
   }
 }
 .p-top_wrap04 .btn-area .btn:hover {
-  background-color: #20B9A7;
-  border: 1px solid #20B9A7;
+  background-color: #20b9a7;
+  border: 1px solid #20b9a7;
 }
 .p-top_wrap04 .to-shoplist {
   position: relative;
@@ -1899,10 +1933,12 @@ top
   color: #fff;
   opacity: 0.8;
 }
-.txt-slider .to-left, .txt-slider .to-right {
+.txt-slider .to-left,
+.txt-slider .to-right {
   white-space: nowrap;
 }
-.txt-slider .to-left p, .txt-slider .to-right p {
+.txt-slider .to-left p,
+.txt-slider .to-right p {
   line-height: 1;
 }
 .txt-slider .to-left p {
@@ -2659,6 +2695,9 @@ top
 .remodal.productor .modal-inner .right .productor-address {
   font-size: 1.4rem;
 }
+.remodal .item-count {
+  margin-top: 2rem;
+}
 
 /*************************************************
   商品一覧
@@ -3068,8 +3107,13 @@ top
     line-height: 1.4;
   }
 }
+.p_item-detail .tab .tab_panel .item-infomation {
+  table-layout: fixed;
+  width: 100%;
+}
 .p_item-detail .tab .tab_panel .item-infomation th, .p_item-detail .tab .tab_panel .item-infomation td {
   padding-bottom: 2rem;
+  line-height: 1.5;
 }
 .p_item-detail .tab .tab_panel .item-infomation th {
   width: 15%;
@@ -3085,7 +3129,6 @@ top
 }
 .p_item-detail .tab .tab_panel .item-infomation td {
   font-size: 1.7rem;
-  line-height: 1.5;
 }
 @media screen and (max-width: 768px) {
   .p_item-detail .tab .tab_panel .item-infomation td {
@@ -3795,6 +3838,10 @@ top
 }
 .customer p, .customer li {
   color: #fff !important;
+}
+
+.template-search p {
+  color: #fff;
 }
 
 /*************************************************

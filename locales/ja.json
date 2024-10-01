@@ -512,5 +512,12 @@
       "expanded": "ギフトカードカードの受取人フォームを展開しました",
       "collapsed": "ギフトカードカードの受取人フォームを折りたたみました"
     }
+  },
+  "shopify": {
+    "checkout": {
+      "contact": {
+        "optional_phone_label": "電話番号（必須）"
+      }
+    }
   }
 }

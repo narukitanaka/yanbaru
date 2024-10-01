@@ -1,6 +1,7 @@
 {
   "current": {
     "logo_width": 90,
+    "favicon": "shopify:\/\/shop_images\/Favicon.png",
     "type_header_font": "zen_kaku_gothic_new_n5",
     "heading_scale": 120,
     "type_body_font": "zen_kaku_gothic_new_n5",
@@ -137,6 +138,12 @@
     "blocks": {
       "14060646107696862457": {
         "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "disabled": false,
+        "settings": {
+        }
+      },
+      "17303863897821421073": {
+        "type": "shopify:\/\/apps\/all-in-gift\/blocks\/embed\/14c78036-27a0-4098-a9e3-c3f1525dedff",
         "disabled": false,
         "settings": {
         }

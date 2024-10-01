@@ -659,6 +659,12 @@
       }
     }
   }
+  // .block_tex {
+  //   display: none;
+  // }
+  .item-count {
+    margin-top: 2rem;
+  }
 }
 
 
@@ -1057,8 +1063,11 @@
         }
       }
       .item-infomation {
+        table-layout: fixed;
+        width: 100%;
         th,td {
           padding-bottom: 2rem;
+          line-height: 1.5;
         }
         th {
           width: 15%;
@@ -1072,7 +1081,6 @@
         }
         td {
           font-size: 1.7rem;
-          line-height: 1.5;
           @include c.mq() {
             font-size: 1.4rem;
           }
@@ -1731,6 +1739,11 @@
   }
   p,li {
     color: #fff !important;
+  }
+}
+.template-search {
+  p {
+    color: #fff;
   }
 }
 

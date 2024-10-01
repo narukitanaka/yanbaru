@@ -1,5 +1,5 @@
-@use "variable"as v;
-@use "common"as c;
+@use "variable" as v;
+@use "common" as c;
 /*************************************************
 header
 *************************************************/
@@ -9,9 +9,9 @@ header {
   top: 0;
   left: 0;
   z-index: 999;
-  transition: all .3s;
+  transition: all 0.3s;
   &.active {
-    background-color: rgba($color: #000000, $alpha: .5);
+    background-color: rgba($color: #000000, $alpha: 0.5);
   }
   &.is-megamenu-icon {
     background-color: transparent !important;
@@ -29,7 +29,8 @@ header {
       }
     }
   }
-  p,a {
+  p,
+  a {
     color: #fff;
   }
   .header_inner {
@@ -64,7 +65,7 @@ header {
       }
       h1 {
         // font-size: 1.5rem;
-        font-size: min(v.pxtovw(15),1.5rem);
+        font-size: min(v.pxtovw(15), 1.5rem);
         font-family: v.$zen-ol;
         color: #fff;
         @include c.mq() {
@@ -91,7 +92,7 @@ header {
           }
           li {
             a {
-              font-size: min(v.pxtovw(15),1.5rem);
+              font-size: min(v.pxtovw(15), 1.5rem);
             }
           }
         }
@@ -116,7 +117,6 @@ header {
   }
 }
 
-
 //ハンバーガーボタン
 .hamberger-wrap {
   display: none;
@@ -126,8 +126,8 @@ header {
 }
 .hambager-content {
   position: relative;
-	width: 4.5rem;
-  aspect-ratio: 1/ 1 ;
+  width: 4.5rem;
+  aspect-ratio: 1/ 1;
   border: 1px solid #fff;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -138,150 +138,149 @@ header {
   @include c.mq(md) {
     border: 1px solid #fff;
   }
-	&.is-ham-open {
+  &.is-ham-open {
     border: 1px solid #000;
-		.hambager {
-			.c-line {
-				background-color: #000;
-				&:first-of-type {
-					animation: line1-open var(--navTransition) forwards;
-				}
-				&:nth-of-type(2) {
-					animation: line2-open var(--navTransition) forwards;
-				}
-				&:last-of-type {
-					animation: line3-open var(--navTransition) forwards;
-				}
-			}
-		}
+    .hambager {
+      .c-line {
+        background-color: #000;
+        &:first-of-type {
+          animation: line1-open var(--navTransition) forwards;
+        }
+        &:nth-of-type(2) {
+          animation: line2-open var(--navTransition) forwards;
+        }
+        &:last-of-type {
+          animation: line3-open var(--navTransition) forwards;
+        }
+      }
+    }
     p {
       color: #000;
     }
-	}
+  }
   p {
     font-family: v.$zen-ol;
     font-size: 1.2rem;
     font-weight: 500;
     line-height: 1;
     letter-spacing: 0;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
   }
 }
 :root {
-	--navTransition: 0.4s;
+  --navTransition: 0.4s;
 }
 .hambager {
-	width: 1.66rem;
-	height: 0.85rem;
-	position: relative;
+  width: 1.66rem;
+  height: 0.85rem;
+  position: relative;
   display: block;
-  margin-top: .7rem;
-	cursor: pointer;
-	.c-line {
-		height: 1px;
-		background-color: #fff;
-		width: 2.37rem;
-		position: absolute;
-		left: 0;
-		right: 0;
+  margin-top: 0.7rem;
+  cursor: pointer;
+  .c-line {
+    height: 1px;
+    background-color: #fff;
+    width: 2.37rem;
+    position: absolute;
+    left: 0;
+    right: 0;
     @include c.mq(sm) {
       width: 100%;
       background-color: #fff;
     }
-		&:first-of-type {
-			top: 0;
-			animation: line1 var(--navTransition) forwards;
-		}
-		&:nth-of-type(2) {
-			top: 50%;
-			animation: line2 var(--navTransition) forwards;
-		}
-		&:last-of-type {
-			top: 100%;
-			animation: line3 var(--navTransition) forwards;
-		}
-	}
+    &:first-of-type {
+      top: 0;
+      animation: line1 var(--navTransition) forwards;
+    }
+    &:nth-of-type(2) {
+      top: 50%;
+      animation: line2 var(--navTransition) forwards;
+    }
+    &:last-of-type {
+      top: 100%;
+      animation: line3 var(--navTransition) forwards;
+    }
+  }
 }
 
 @keyframes line1 {
-	0% {
-		top: 50%;
-		transform: rotate(45deg);
-	}
-	50% {
-		transform: rotate(0);
-		top: 50%;
-	}
-	100% {
-		transform: rotate(0);
-		top: 0;
-	}
+  0% {
+    top: 50%;
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(0);
+    top: 50%;
+  }
+  100% {
+    transform: rotate(0);
+    top: 0;
+  }
 }
 @keyframes line1-open {
-	0% {
-		transform: rotate(0);
-		top: 0;
-	}
-	50% {
-		transform: rotate(0);
-		top: 50%;
-	}
-	100% {
-		top: 50%;
-		transform: rotate(45deg);
-	}
+  0% {
+    transform: rotate(0);
+    top: 0;
+  }
+  50% {
+    transform: rotate(0);
+    top: 50%;
+  }
+  100% {
+    top: 50%;
+    transform: rotate(45deg);
+  }
 }
 @keyframes line2 {
-	0% {
-		opacity: 0;
-	}
-	50% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @keyframes line2-open {
-	0% {
-		opacity: 1;
-	}
-	50% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 0;
-	}
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 @keyframes line3 {
-	0% {
-		top: 50%;
-		transform: rotate(-45deg);
-	}
-	50% {
-		transform: rotate(0);
-		top: 50%;
-	}
-	100% {
-		transform: rotate(0);
-		top: 100%;
-	}
+  0% {
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+  50% {
+    transform: rotate(0);
+    top: 50%;
+  }
+  100% {
+    transform: rotate(0);
+    top: 100%;
+  }
 }
 @keyframes line3-open {
-	0% {
-		transform: rotate(0);
-		top: 100%;
-	}
-	50% {
-		transform: rotate(0);
-		top: 50%;
-	}
-	100% {
-		top: 50%;
-		transform: rotate(-45deg);
-	}
+  0% {
+    transform: rotate(0);
+    top: 100%;
+  }
+  50% {
+    transform: rotate(0);
+    top: 50%;
+  }
+  100% {
+    top: 50%;
+    transform: rotate(-45deg);
+  }
 }
-
 
 .mega-menu {
   display: none;
@@ -296,7 +295,8 @@ header {
     width: 90%;
     margin: 0 auto;
     padding: 12rem 0 3rem;
-    a,input {
+    a,
+    input {
       font-family: v.$zen-ol;
     }
     .serch {
@@ -307,10 +307,14 @@ header {
         display: inline-flex;
         align-items: center;
         width: 100%;
-        input[type=text] {
+        input[type="text"] {
           width: 100%;
           font-size: 1.3rem;
           padding: 1.2rem 2rem;
+          @include c.mq() {
+            font-weight: 700;
+            color: v.$main-txt;
+          }
         }
         .icn-search {
           width: 14px;
@@ -324,7 +328,7 @@ header {
       ul {
         a {
           display: flex;
-          gap: .5rem;
+          gap: 0.5rem;
           align-items: center;
           font-weight: 500;
           width: 100%;
@@ -337,7 +341,7 @@ header {
       ul {
         li {
           padding: 1.5rem 0;
-          border-bottom: 1px dotted #1A1311;
+          border-bottom: 1px dotted #1a1311;
           a {
             font-size: 1.5rem;
           }
@@ -357,7 +361,7 @@ header {
     }
     .insta {
       display: flex;
-      gap: .5rem;
+      gap: 0.5rem;
       align-items: center;
       font-size: 1.5rem;
     }
