@@ -15,8 +15,7 @@
     },
     "flavor_list_jb9DBM": {
       "type": "flavor-list",
-      "settings": {
-      }
+      "settings": {}
     }
   },
   "order": [

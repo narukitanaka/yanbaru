@@ -146,19 +146,29 @@ document.addEventListener("DOMContentLoaded", (event) => {
     allowTouchMove: false, // マウスでのスワイプを禁止
   });
 
-  //トップ　バナー無限スライダー
+  //トップ　バナースライダー
   const swiperBanner = new Swiper(".banner-slider", {
     slidesPerView: 1,
     spaceBetween: 20, // 画像間のスペース
     loop: true,
-    autoplay: {
-      delay: 0, // delayを0にすることで連続的にスライドする
-      disableOnInteraction: false,
+    centeredSlides: true, // アクティブなスライドを中央にする
+    // autoplay: {
+    //   delay: 5000,
+    //   disableOnInteraction: false,
+    // },
+    speed: 500, // この値を調整して、スライドのスピードを変更する
+    // freeMode: true,
+    // freeModeMomentum: false, // フリック後のアニメーションを無効にする
+    // ページネーション
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
     },
-    speed: 10000, // この値を調整して、スライドのスピードを変更する
-    freeMode: true,
-    freeModeMomentum: false, // フリック後のアニメーションを無効にする
-    freeModeSticky: true, // 無限ループ時にスライドがなめらかに連続して動くようにする
+    // 前後の矢印
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
     breakpoints: {
       // スライドの表示枚数：700px以上の場合
       770: {
@@ -341,4 +351,20 @@ Parallax02.forEach((Parallax02) => {
       },
     }
   );
+});
+
+//トップ固定バナー
+const mv = document.querySelector(".mv");
+const mvFixLinkImg = mv.querySelector(".mv_fix-linkImg");
+
+ScrollTrigger.create({
+  trigger: mv,
+  start: "bottom top", // MVセクションの下端が画面のトップに到達した時
+  end: "+=100%",
+  onEnter: () => {
+    mvFixLinkImg.classList.add("bottom-fixed");
+  },
+  onLeaveBack: () => {
+    mvFixLinkImg.classList.remove("bottom-fixed");
+  },
 });

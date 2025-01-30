@@ -39,8 +39,16 @@
             "link_banner": "shopify:\/\/collections\/ミックスセット"
           }
         },
+        "banner_top_qqAwaF": {
+          "type": "banner-top",
+          "settings": {
+            "image_banner": "shopify:\/\/shop_images\/witer_banner.png",
+            "link_banner": "shopify:\/\/collections\/first-gift"
+          }
+        },
         "banner_top_HHkTfT": {
           "type": "banner-top",
+          "disabled": true,
           "settings": {
             "image_banner": "shopify:\/\/shop_images\/set.png",
             "link_banner": "shopify:\/\/collections\/tastes"
@@ -56,10 +64,14 @@
       },
       "block_order": [
         "banner_top_BBnCrM",
+        "banner_top_qqAwaF",
         "banner_top_HHkTfT",
         "banner_top_UCHwKp"
       ],
       "settings": {
+        "pickupImg": "shopify:\/\/shop_images\/kv_pickupImg.png",
+        "pickupImg_sp": "shopify:\/\/shop_images\/kv_pickupImg_sp.png",
+        "pickupLink": "shopify:\/\/collections\/tastes"
       }
     }
   },

@@ -107,6 +107,15 @@
   </p>
 </div>
 
+<div class="mv_fix-linkImg img-box obj-fit">
+  <a href="{{ section.settings.pickupLink }}">
+    <picture>
+      <source srcset="{{ section.settings.pickupImg_sp | img_url: 'master' }}" media="(max-width: 768px)">
+      <img src="{{ section.settings.pickupImg | img_url: 'master' }}" alt="">
+    </picture>
+  </a>
+</div>
+
 </div><!-- /.mv -->
 
 <section class="p-top_wrap01">
@@ -121,7 +130,99 @@
       </div>
     {% endfor %}
   </div>
+  <!-- ページネーション -->
+  <div class="swiper-pagination"></div>
+  <!-- 前後の矢印 -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
 </div>
+
+
+<section class="p-top_wrap03">
+<div class="inner">
+  <div class="head-ttl anime-ttl01"><span class="color">C</span><span>A</span><span>T</span><span>E</span><span>G</span><span>O</span><span>R</span><span>Y</span></div>
+  <div class="ttl anime-ttl02"><h2>商品カテゴリー</h2></div>
+
+  <div class="cate-group aji">
+    <p class="ttl fadeIn">味から選ぶ</p>
+    <div class="flex">
+      <div class="box b-rudius fadeIn">
+        <a href="/collections/fruits/">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item01.png" alt="">
+          <p>フルーツ系</p>
+        </a>
+      </div><!-- /.box -->
+      <div class="box b-rudius fadeIn">
+        <a href="/collections/milk/">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item02.png" alt="">
+          <p>ミルク系</p>
+        </a>
+      </div><!-- /.box -->
+      <div class="box b-rudius fadeIn">
+        <a href="/collections/macaron-set/">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item03.png" alt="">
+          <p>＋マカロン<br class="u-sp">セット</p>
+        </a>
+      </div><!-- /.box -->
+    </div><!-- /.flex -->
+  </div><!-- /.cate-group -->
+
+  <div class="cate-group youto">
+    <p class="ttl fadeIn">用途から選ぶ</p>
+    <div class="flex">
+      <div class="box b-rudius fadeIn">
+        <a href="/collections/first-gift/">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item04.png" alt="">
+          <p>初めての人に /<br>ギフトに</p>
+        </a>
+      </div><!-- /.box -->
+      <div class="box b-rudius fadeIn">
+        <a href="/collections/choice/">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item05.png" alt="">
+          <p>味を選びたい</p>
+        </a>
+      </div><!-- /.box -->
+      <div class="box b-rudius fadeIn">
+        <a href="/collections/party/">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item06.png" alt="">
+          <p>パーティー用</p>
+        </a>
+      </div><!-- /.box -->
+    </div><!-- /.flex -->
+  </div><!-- /.cate-group -->
+
+  <div class="cate-group konomi">
+    <p class="ttl fadeIn">好みから選ぶ</p>
+    <div class="flex">
+      <div class="box b-rudius fadeIn">
+        <a href="/collections/tastes/">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item07.png" alt="">
+          <p>色々味わいたい</p>
+        </a>
+      </div><!-- /.box -->
+      <div class="box b-rudius fadeIn">
+        <a href="/collections/vegan/">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item08.png" alt="">
+          <p>Veganフレンドリー</p>
+        </a>
+      </div><!-- /.box -->
+      <div class="box b-rudius fadeIn">
+        <a href="/collections/southern/">
+          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item09.png" alt="">
+          <p>南国の食材</p>
+        </a>
+      </div><!-- /.box -->
+    </div><!-- /.flex -->
+  </div><!-- /.cate-group -->
+
+  <div class="btn-area"><a class="btn02" href="/collections/all/">全ての商品を見る</a></div>
+
+</div><!-- /.inner -->
+{% comment %} <div class="suika img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-category-bg02.png" alt=""></div>
+<div class="mango img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-category-bg03.png" alt=""></div> {% endcomment %}
+</section><!-- /.p-top_wrap03 -->
+
+
 
 <div class="about-wrap">
   <div class="head-ttl anime-ttl01"><span class="color">A</span><span>B</span><span>O</span><span>U</span><span>T</span> <span>U</span><span>S</span></div>
@@ -279,90 +380,6 @@
 </div>
 <div class="btn-area"><a class="btn" href="/blogs/flavor/">詳しく味わう</a></div>
 </section><!-- /.p-top_wrap02 -->
-
-<section class="p-top_wrap03">
-<div class="inner">
-  <div class="head-ttl anime-ttl01"><span class="color">C</span><span>A</span><span>T</span><span>E</span><span>G</span><span>O</span><span>R</span><span>Y</span></div>
-  <div class="ttl anime-ttl02"><h2>商品カテゴリー</h2></div>
-
-  <div class="cate-group aji">
-    <p class="ttl fadeIn">味から選ぶ</p>
-    <div class="flex">
-      <div class="box b-rudius fadeIn">
-        <a href="/collections/fruits/">
-          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item01.png" alt="">
-          <p>フルーツ系</p>
-        </a>
-      </div><!-- /.box -->
-      <div class="box b-rudius fadeIn">
-        <a href="/collections/milk/">
-          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item02.png" alt="">
-          <p>ミルク系</p>
-        </a>
-      </div><!-- /.box -->
-      <div class="box b-rudius fadeIn">
-        <a href="/collections/macaron-set/">
-          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item03.png" alt="">
-          <p>＋マカロン<br class="u-sp">セット</p>
-        </a>
-      </div><!-- /.box -->
-    </div><!-- /.flex -->
-  </div><!-- /.cate-group -->
-
-  <div class="cate-group youto">
-    <p class="ttl fadeIn">用途から選ぶ</p>
-    <div class="flex">
-      <div class="box b-rudius fadeIn">
-        <a href="/collections/first-gift/">
-          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item04.png" alt="">
-          <p>初めての人に /<br>ギフトに</p>
-        </a>
-      </div><!-- /.box -->
-      <div class="box b-rudius fadeIn">
-        <a href="/collections/choice/">
-          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item05.png" alt="">
-          <p>味を選びたい</p>
-        </a>
-      </div><!-- /.box -->
-      <div class="box b-rudius fadeIn">
-        <a href="/collections/party/">
-          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item06.png" alt="">
-          <p>パーティー用</p>
-        </a>
-      </div><!-- /.box -->
-    </div><!-- /.flex -->
-  </div><!-- /.cate-group -->
-
-  <div class="cate-group konomi">
-    <p class="ttl fadeIn">好みから選ぶ</p>
-    <div class="flex">
-      <div class="box b-rudius fadeIn">
-        <a href="/collections/tastes/">
-          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item07.png" alt="">
-          <p>色々味わいたい</p>
-        </a>
-      </div><!-- /.box -->
-      <div class="box b-rudius fadeIn">
-        <a href="/collections/vegan/">
-          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item08.png" alt="">
-          <p>Veganフレンドリー</p>
-        </a>
-      </div><!-- /.box -->
-      <div class="box b-rudius fadeIn">
-        <a href="/collections/southern/">
-          <img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/categry-item09.png" alt="">
-          <p>南国の食材</p>
-        </a>
-      </div><!-- /.box -->
-    </div><!-- /.flex -->
-  </div><!-- /.cate-group -->
-
-  <div class="btn-area"><a class="btn02" href="/collections/all/">全ての商品を見る</a></div>
-
-</div><!-- /.inner -->
-<div class="suika img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-category-bg02.png" alt=""></div>
-<div class="mango img-box"><img src="https://cdn.shopify.com/s/files/1/0623/5966/6733/files/top-category-bg03.png" alt=""></div>
-</section><!-- /.p-top_wrap03 -->
 
 <section class="p-top_wrap04">
 
@@ -526,6 +543,23 @@
     "presets": [
       {
         "name": "top-main"
+      }
+    ],
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "pickupImg",
+        "label": "KvPickUp画像（PC）"
+      },
+      {
+        "type": "image_picker",
+        "id": "pickupImg_sp",
+        "label": "KvPickUp画像（スマホ）"
+      },
+      {
+        "type": "url",
+        "id": "pickupLink",
+        "label": "KvPickUpリンク"
       }
     ],
     "blocks": [
