@@ -19,14 +19,14 @@
               <div class="img-box obj-fit"><img src="{{ product.featured_image.src | img_url: 'master' }}" alt=""></div>
               <div class="under-box b-rudius">
                 <p class="name">{{ product.title }}</p>
-                <p class="cate">
+                {% comment %} <p class="cate">
                   {% for collection in product.collections %}
                     {% assign excluded_collections = 'all' | split: ',' %}
                     {% unless excluded_collections contains collection.handle %}
                       {{ collection.title }}
                     {% endunless %}
                   {% endfor %}
-                </p>
+                </p> {% endcomment %}
                 {% comment %} <p class="price">{{ product.price | money }}</p> {% endcomment %}
                 {% if product.variants.size > 2 %}
                   <p class="price">{{ product.price | money }}〜</p>
